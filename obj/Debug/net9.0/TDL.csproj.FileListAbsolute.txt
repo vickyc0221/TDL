@@ -1,0 +1,15 @@
+C:\Users\victo\TDL\obj\Debug\net9.0\TDL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\victo\TDL\obj\Debug\net9.0\TDL.AssemblyInfoInputs.cache
+C:\Users\victo\TDL\obj\Debug\net9.0\TDL.AssemblyInfo.cs
+C:\Users\victo\TDL\obj\Debug\net9.0\TDL.csproj.CoreCompileInputs.cache
+C:\Users\victo\TDL\obj\Debug\net9.0\TDL.sourcelink.json
+C:\Users\victo\TDL\bin\Debug\net9.0\TDL.exe
+C:\Users\victo\TDL\bin\Debug\net9.0\TDL.deps.json
+C:\Users\victo\TDL\bin\Debug\net9.0\TDL.runtimeconfig.json
+C:\Users\victo\TDL\bin\Debug\net9.0\TDL.dll
+C:\Users\victo\TDL\bin\Debug\net9.0\TDL.pdb
+C:\Users\victo\TDL\obj\Debug\net9.0\TDL.dll
+C:\Users\victo\TDL\obj\Debug\net9.0\refint\TDL.dll
+C:\Users\victo\TDL\obj\Debug\net9.0\TDL.pdb
+C:\Users\victo\TDL\obj\Debug\net9.0\TDL.genruntimeconfig.cache
+C:\Users\victo\TDL\obj\Debug\net9.0\ref\TDL.dll
