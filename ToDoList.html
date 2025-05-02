@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <!-- Create header title that will show on tab -->
+    <head>
+        <title> TO DO LIST </title> 
+    </head>
+    <!-- Opens the body(contents of the page) -->
+    <body>
+        <h1> Welcome </h1>
+
+        <!-- shows description text next to input box-->
+        <label>Description:</label>
+
+        <!--creates an inout text box for user to type the task description-->
+        <input id="descriptionText"/>
+
+        <!-- Creates a button labeled Add that runs AddTask() when clicked-->
+        <input id="CreateTaskButton" type="button" onclick="return AddTask()" value="Add"/>
+        
+        <!-- creates a sort button that runs sortList when clicked-->
+        <input type="button" value="Sort Tasks" onclick="sortList()"/>
+
+        <!-- creates a empty list where tasks are added-->
+        <ul id="taskList">
+        
+        </ul>
+    </body>
+
+    <script>
+
+        //function used to add task to list
+        function AddTask(){
+
+            //gets text from input box 
+            var desc = document.getElementById("descriptionText").value;
+
+            //appends task to list, creates a delete and edit button for task
+            document.getElementById('taskList').innerHTML += 
+                "<li><input value='" + desc + "'/>" +
+                     "<input type = 'button' value = 'Delete' onclick='DeleteTask(this)'/> "+
+                     "<input type = 'button' value = 'Edit' onclick = 'EditTask(this)'/></li>"
+        }
+        
+
+        //function used to delete task from list
+        function DeleteTask(button){
+
+            //find parent node of task clicked on
+            var li = button.parentNode;
+
+            //deletes from the task list
+            li.parentNode.removeChild(li);
+        }
+
+
+        //function used to edit tasks
+        function EditTask(button){
+
+            //finds parent node of task clicked on
+            var li = button.parentNode;
+
+            //stores the task in a new variable
+            var newInput = li.getElementsByTagName("input")[0];
+
+            //if button clicked on is edit, let's user type in new task & changes the button to save
+            if (button.value == "Edit"){
+                newInput.readOnly = false;
+                newInput.focus();
+                button.value = "Save";
+            }
+
+            //if button says save, makes input read only, and changes button back to edit
+            else{                
+                newInput.readOnly = true;
+                button.value = "Edit";
+            }
+        }
+
+        //function used to sort list alphabetically
+        function sortList(){
+
+            //creates new variables that will be used throughout this function
+            var list, i, switching, b, shouldSwitch;
+            list = document.getElementById('taskList');
+            switching = true;
+
+            //using a bubble sort method, this function loops through the items of the list
+            while(switching){
+                switching = false;
+                b = list.getElementsByTagName("LI");
+
+                for(i=0; i<(b.length-1); i++){
+                    shouldSwitch = false;
+                    
+                    //compares the values of the tasks in the list
+                    if(b[i].innerHTML.toLowerCase() > b[i+1].innerHTML.toLowerCase()){
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+                
+                //if if one is alphabetically after the next, the items are swapped
+                if(shouldSwitch){
+                    b[i].parentNode.insertBefore(b[i+1],b[i]);
+                    switching = true;
+                }
+            }
+        }
+    </script>
+</html>
